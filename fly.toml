@@ -1,0 +1,11 @@
+# fly.toml
+[build]
+  builder = "heroku/buildpacks:20"
+
+[env]
+  PORT = "8080"  # Must match main.py
+
+[http_service]
+  internal_port = 8080  # Same as above
+  force_https = true
+  auto_stop_machines = false  # Prevents sleep
